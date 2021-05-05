@@ -1,0 +1,23 @@
+{
+  "name": "Zach-location",
+  "version": "0.1",
+  "description": "Location API",
+  "license": "MIT",
+  "author": "Zach Bush",
+
+  "main": "script.js",
+  "files": [
+    "Procfile",
+    "script.js"
+  ],
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": ">=1.19.0",
+    "cors": ">=2.8.5",
+    "https": ">=1.0.0",
+    "node-fetch": ">=2.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
