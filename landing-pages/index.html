@@ -35,6 +35,7 @@
             const response = await fetch("https://zach-location.herokuapp.com/api/v1/locations");
             const json = await response.json();
             console.log("json: "+json);
+            return json;
         }
         const options = {
             lat: 0,
