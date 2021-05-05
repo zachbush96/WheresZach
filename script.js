@@ -21,7 +21,7 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
  app.post('/api/v1/location', jsonParser ,(req, res) => { 
      console.log("Body --> "+req.body);
      var cords = req.body.cords;
-     console.log("typeof cords -->") + typeof cords);
+     console.log("typeof cords -->") + typeof cords;
      cords = cords.split(":");
      console.log("Cords after being split : : "+typeof cords);
      console.log(cords);
