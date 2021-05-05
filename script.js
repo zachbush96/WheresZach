@@ -20,8 +20,12 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
 //Listening for get requests
  app.post('/api/v1/location', jsonParser ,(req, res) => { 
      console.log(req.body);
-     //var cords = req.body.cords;
-     //console.log("Got Post. Cords: " + cords);
+     var cords = req.body.cords;
+     console.log("Got Post. Cords: " + cords);
+     var lat = req.body.cords.Lat;
+     var long = req.body.cords.Long;
+     console.log("lat: " + lat);
+     console.log("long: " + long);
      res.send("200");
     }); 
 
