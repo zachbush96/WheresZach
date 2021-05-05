@@ -13,7 +13,7 @@ app.get('/', (req,res) =>{
 });
 
 //Array that holds dicts that contain LAT and LONG cordinates for mapping later
-var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":19.5555,"long":-19.32323},{"lat":20.2,"long":19.6656}]
+var previousLocations = [{"lat":18.33333,"long":-21.22222},{"lat":19.5555,"long":-19.32323},{"lat":20.2,"long":19.6656}];         //[{"lat":18.33333,"long":-21.22222},{"lat":19.5555,"long":-19.32323},{"lat":20.2,"long":19.6656}]
         
 
 
