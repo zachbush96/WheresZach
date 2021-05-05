@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//For parsing req.body()
+cost cors = require('cors');
+
 var jsonParser = bodyParser.json();
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
  
 //Hosting index page
