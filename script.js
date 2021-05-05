@@ -16,21 +16,9 @@ var previousLocations = []         //[{"lat":18.33333,"long":-21.22222},{"lat":1
 
 //Listening for get requests
  app.post('/api/v1/location', (req, res) => { 
-    //Make sure request contains Dict
-    if(!req.query.zip){res.send("NO DATA SUMBITTED")}
-    
-    **Stopped Here***
-    //Getting setup to send get request
-    const api_url = "https://api.openweathermap.org/data/2.5/weather?zip=";
-    const appid = "&units=imperial&appid="+process.env.OpenWeatherAPIKey;
-    fetch(api_url + req.query.zip + appid)
-    //take the response and convert to json 
-    .then(res => res.json())
-    //Using that json console.log the result 
-    .then(json => {
-        console.log(json);
-        //Send json object back as the response to the original get request
-        res.send(json);
+     var cords = req.body.cords;
+     console.log("Got Post. Cords: " + cords);
+     res.send("200");
     })
 });
  
