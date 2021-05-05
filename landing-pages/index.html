@@ -35,8 +35,17 @@
             const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
             .then(res => res.json())
             .then(json => {
-                console.log("Json Spot 0 keys " + json[0].keys());
-                console.log("json spot 1 keys " + json[1].keys());
+                for(x in json){
+                    console.log(json[x].lat);
+                    console.log(json[x].long);
+                    const newLocation = {
+                        "lat": json[x].lat,
+                        "long": json[x].long
+                    }
+                    locations.push(newLocation)
+                }
+                //console.log("Json Spot 0 keys " + json[0].lat);
+                //console.log("json spot 1 keys " + json[1]);
                 return json;
             })
         }
@@ -63,7 +72,7 @@
         function draw(){
         }
 
-
+        getLocations();
     </script>    
 </body>
 </html>
