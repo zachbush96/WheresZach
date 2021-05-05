@@ -16,8 +16,9 @@ var previousLocations = []         //[{"lat":18.33333,"long":-21.22222},{"lat":1
 
 //Listening for get requests
  app.post('/api/v1/location', (req, res) => { 
-     var cords = req.body.cords;
-     console.log("Got Post. Cords: " + cords);
+     console.log(req.body);
+     //var cords = req.body.cords;
+     //console.log("Got Post. Cords: " + cords);
      res.send("200");
     }); 
 
