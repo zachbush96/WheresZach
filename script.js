@@ -24,6 +24,7 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
      console.log(typeof cords);
      cords = cords.split(":");
      console.log(typeof cords);
+     console.log(cords);
      //cords = cords.split(",");
      console.log("Got Post. Cords: " + cords);
      var lat = cords[2];
