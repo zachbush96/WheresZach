@@ -19,14 +19,15 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
 
 //Listening for get requests
  app.post('/api/v1/location', jsonParser ,(req, res) => { 
-     console.log(req.body);
+     console.log("Body --> "+req.body);
      var cords = req.body.cords;
-     console.log(typeof cords);
+     console.log("typeof cords -->") + typeof cords);
      cords = cords.split(":");
-     console.log(typeof cords);
+     console.log("Cords after being split : : "+typeof cords);
      console.log(cords);
-     //cords = cords.split(",");
-     console.log("Got Post. Cords: " + cords);
+     cords = cords.split(",");
+     console.log("Cords after being split by comma" + cords);
+     //console.log("Got Post. Cords: " + cords);
      var lat = cords[2];
      var long = cords[4];
      console.log("lat: " + lat);
