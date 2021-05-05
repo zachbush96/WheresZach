@@ -25,13 +25,13 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
      cords = cords.split(":");
      console.log("Cords after being split : : "+typeof cords);
      console.log(cords);
-     console.log("0: "+cords[0])
-     console.log("1: "+cords[1])
-     console.log("2: "+cords[2])
-     console.log("3: "+cords[3])
+
+     console.log("1: "+cords[1].slice(0,-8))  //Lat?Maybe
+     console.log("2: "+cords[2]) //Longitude
+
      //console.log("Got Post. Cords: " + cords);
      var lat = cords[1];
-     var long = cords[3];
+     var long = cords[2];
      
      console.log("lat: " + lat);
      console.log("long: " + long);
