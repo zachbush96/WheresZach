@@ -21,25 +21,27 @@ var previousLocations = [];         //[{"lat":18.33333,"long":-21.22222},{"lat":
  app.post('/api/v1/location', jsonParser ,(req, res) => { 
      console.log("Body --> "+req.body);
      var cords = req.body.cords;
-     console.log("typeof cords -->") + typeof cords;
+     console.log("typeof cords -->" + typeof cords);
      cords = cords.split(":");
      console.log("Cords after being split : : "+typeof cords);
      console.log(cords);
 
+     //Setting lat and long variables
      var lat = cords[1].slice(1,-8);
      var long = cords[2].slice(1,-2);
-     
-     console.log("lat " + lat)  //Lat?Maybe
-     console.log("long "+ long) //Longitude
-
-     //console.log("Got Post. Cords: " + cords);
-
-     
      console.log("lat: " + lat);
      console.log("long: " + long);
      
+     previousLocations.push({"lat":lat,"long":long})
+
      res.send("200");
     }); 
+
+app.get('/api/v1/locations', (req,res) => {
+    console.log("Got GET Request");
+    console.log("PREVIOUS LOCATIONS: "+ previousLocations);
+    res.send(previousLocations);
+});
 
 app.listen(PORT, () => {
   console.log("Listending on port " + PORT);
