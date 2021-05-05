@@ -35,8 +35,8 @@
             const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
             .then(res => res.json())
             .then(json => {
-                console.log("Json Spot 0" + json[0][0]);
-                console.log("json spot 1" + json[1][0]);
+                console.log("Json Spot 0 keys " + json[0].keys());
+                console.log("json spot 1 keys " + json[1].keys());
                 return json;
             })
         }
