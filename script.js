@@ -19,9 +19,7 @@ var previousLocations = []         //[{"lat":18.33333,"long":-21.22222},{"lat":1
      var cords = req.body.cords;
      console.log("Got Post. Cords: " + cords);
      res.send("200");
-    })
-});
- 
+    }); 
 
 app.listen(PORT, () => {
   console.log("Listending on port " + PORT)
