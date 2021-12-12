@@ -36,8 +36,8 @@
         var locations = []; //to Hold Locations
         
         function  getLocations(){
-            //const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
-            const response = fetch("http://localhost:3000/api/v1/locations")
+            const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
+            //const response = fetch("http://localhost:3000/api/v1/locations")
             .then(res => res.json())
             .then(json => {
                 for(x in json){
