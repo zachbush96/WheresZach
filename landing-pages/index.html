@@ -16,6 +16,7 @@
     * { text-align: center;
         justify-content: center;
         font-family: 'Inconsolata', monospace;}
+
   </style>
 </head>
 
@@ -26,7 +27,6 @@
   </div>
   <br>
   <div id="mapid">
-
     <script>
         let myMap;
         let canvas;
@@ -36,15 +36,17 @@
         var locations = []; //to Hold Locations
         
         function  getLocations(){
-            const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
+            //const response = fetch("https://zach-location.herokuapp.com/api/v1/locations")
+            const response = fetch("http://localhost:3000/api/v1/locations")
             .then(res => res.json())
             .then(json => {
                 for(x in json){
-                    console.log(json[x].lat);
-                    console.log(json[x].long);
+                    //console.log(json[x]);
+                    console.log(json[x].Lat);
+                    console.log(json[x].Long);
                     const newLocation = {
-                        "lat": json[x].lat,
-                        "long": json[x].long
+                        "Lat": json[x].Lat,
+                        "Long": json[x].Long
                     }
                     locations.push(newLocation)
                 }
@@ -54,8 +56,8 @@
             })
         }
         const options = {
-            lat: 36.63370803623742,
-            lng: -87.42799207454642,
+            lat: 0,
+            lng: 0,
             zoom: 4,
             style: "https://{s}.tile.osm.org/{z}/{x}/{y}.png"
         }
@@ -63,7 +65,7 @@
             clear();
             locations.forEach(element => {
                 console.log("Element: "+element),
-                place = myMap.latLngToPixel(element.lat, element.long),
+                place = myMap.latLngToPixel(element.Lat, element.Long),
                 ellipse(place.x, place.y, 20, 20)
             }) 
         }
