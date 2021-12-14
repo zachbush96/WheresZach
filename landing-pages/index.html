@@ -69,7 +69,7 @@
             }) 
         }
         function setup(){
-            canvas = createCanvas(640,640); 
+            createCanvas(displayWidth, displayHeight); 
             myMap = mappa.tileMap(options);   
             myMap.overlay(canvas);
             myMap.onChange(drawPoint)
