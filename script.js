@@ -58,7 +58,7 @@ function getLocationsFromDatabase(){
   .then(data => {
     //console.log("Got from DB");
     for(location in data.body){
-      locationObject = {'Lat':data.body[location].Lat, 'Long':data.body[location].Long};
+      locationObject = {'Lat':data.body[location].Lat, 'Long':data.body[location].Long, 'Timestamp':data.body[location].Timestamp};
       previousLocations.push(locationObject);
     }
     return data.body;
