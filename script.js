@@ -85,8 +85,8 @@ getLocationsFromDatabase();
     console.log("lat: " + lat);
     console.log("long: " + long);
      
-    previousLocations.push({"Lat":lat,"Long":long})
-    saveLocationsToDatabase({"Lat":lat,"Long":long});
+    previousLocations.push({"Lat":lat,"Long":long,"Timestamp":((new Date()).toISOString()).toLocaleString('zh-TW')})
+    saveLocationsToDatabase({"Lat":lat,"Long":long,"Timestamp": ((new Date()).toISOString()).toLocaleString('zh-TW')});
     
     res.send("200");
     }); 
