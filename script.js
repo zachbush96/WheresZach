@@ -15,6 +15,13 @@ const PORT = process.env.PORT || 3000;
 
 //Hosting index page
 app.use(express.static("landing-page"));
+
+//CORS Helping
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+})
+
 app.get('/', (req,res) =>{
  res.sendFile('index.html', {root: __dirname + '/landing-pages'});
 });
