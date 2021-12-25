@@ -65,7 +65,7 @@
         function drawPoint(){
             clear();
             locations.forEach(element => {
-                place = myMap.latLngToPixel(element.Lat, element.Long),
+                place = myMap.latLngToPixel(element.Lat, element.Long, element.Timestamp),
                 ellipse(place.x, place.y, 20, 20)
             }) 
         }
