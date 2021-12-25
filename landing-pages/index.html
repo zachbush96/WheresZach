@@ -65,7 +65,6 @@
         function drawPoint(){
             clear();
             locations.forEach(element => {
-                element.bindPopup('Testing'),
                 place = myMap.latLngToPixel(element.Lat, element.Long),
                 ellipse(place.x, place.y, 20, 20)
             }) 
