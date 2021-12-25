@@ -49,7 +49,7 @@ function saveLocationsToDatabase(locationObject){
 
 };
 
-//Return locations from supabase database
+//Return locations and timestamp from supabase database
 function getLocationsFromDatabase(){
   console.log("getting from DB");
   supabaseClient
