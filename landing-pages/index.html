@@ -46,7 +46,8 @@
                     console.log(json[x]);
                     const newLocation = {
                         "Lat": json[x].Lat,
-                        "Long": json[x].Long
+                        "Long": json[x].Long,
+                        "Timestamp": json[x].Timestamp
                     }
                     locations.push(newLocation)
                 }
@@ -64,6 +65,7 @@
         function drawPoint(){
             clear();
             locations.forEach(element => {
+                element.bindPopup('Testing'),
                 place = myMap.latLngToPixel(element.Lat, element.Long),
                 ellipse(place.x, place.y, 20, 20)
             }) 
