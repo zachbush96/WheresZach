@@ -92,7 +92,7 @@ getLocationsFromDatabase();
     }); 
 
 app.get('/api/v1/locations', (req,res) => {
-    console.log("Got GET Request");
+    getLocationsFromDatabase();
     console.log("PREVIOUS LOCATIONS: "+ previousLocations);
     res.send(previousLocations);
 });
